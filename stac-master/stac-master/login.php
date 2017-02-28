@@ -1,0 +1,57 @@
+<?php
+
+include_once('./assets/php/util.php');
+$response = false;
+
+if(isset($_POST['username']) && isset($_POST['password'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $response = $util->login($username, $password);
+
+    if(strcmp($response, 'LOGR S') == 0) {
+        $_SESSION['status'] = true;
+    }
+}
+
+?>
+
+<html>
+<head>
+    <title>Server Connection - CS 350 User Client</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/styles.css" />
+</head>
+<body>
+    <?php include_once('./partials/nav.php'); ?>
+    <main>
+        <?php
+            if($response) {
+                if(strcmp($response, 'LOGR S') == 0) {
+                    ?>
+                    <h1>Welcome!</h1>
+                    <p>Your login was successful!</p>
+                    <?php
+                } else if(strcmp($response, 'LOGR F') == 0) {
+                    ?>
+                    <h1>Oops!</h1>
+                    <p>Your login failed</p>
+                    <p><a href="./index.php">Click here to try again</a></p>
+                    <?php
+                } else {
+                    ?>
+                    <h1>Error!</h1>
+                    <p>An unknown error occurred</p>
+                    <p><a href="./index.php">Click here to try again</a></p>
+                    <?php
+                }
+            } else {
+                ?>
+                <h1>Error!</h1>
+                <p>There was an error while logging you in</p>
+                <p><a href="./index.php">Click here to try again</a></p>
+                <?php
+            }
+        ?>
+    </main>
+</body>
+</html>

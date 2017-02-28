@@ -1,0 +1,42 @@
+.results {
+    width: 100%;
+    display: block;
+    float: left;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    box-sizing: border-box;
+    border: 2px solid rgba(222, 222, 222, 1);
+}
+
+.results table {
+    width: 100%;
+    border: 2px solid rgba(222, 222, 222, 1);
+    background: white;
+}
+
+.results table tr td,
+.results table tr th {
+    border-left: 2px solid rgba(222, 222, 222, 1);
+    border-bottom: 2px solid rgba(222, 222, 222, 1);
+    padding: 5px;
+}
+
+.results table tr:last-child td,
+.results table tr:last-child th {
+    border-bottom: 0px;
+}
+
+.results table tr td:first-child,
+.results table tr th:first-child {
+    border-left: 0px;
+}
+
+.topspace {
+    margin-top: 25px;
+}
+
+.centered {
+    text-align: center;
+    vertical-align: middle;
+}

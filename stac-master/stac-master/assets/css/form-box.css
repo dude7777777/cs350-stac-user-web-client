@@ -1,0 +1,36 @@
+.form-box {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.form-box .centered {
+    display: inline-block;
+    border-radius: 3px;
+    box-sizing: border-box;
+    padding: 25px;
+    background-color: white;
+    border: 2px solid rgba(222, 222, 222, 1);
+    width: 400px;
+    max-width: 100%;
+}
+
+.form-box .centered .row {
+    display: block;
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+
+.form-box .centered .row.right {
+    text-align: right;
+}
+
+.form-box .centered .row.center {
+    text-align: center;
+}
+
+.form-box .centered .row.topspace {
+    margin-top: 20px;
+}
